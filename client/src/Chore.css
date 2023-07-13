@@ -1,0 +1,81 @@
+
+
+.item
+{
+    border: 2px solid black;
+    background-color: rgb(141, 141, 230);
+    margin-bottom: 5px;
+    border-radius: 1rem;
+    width: 15rem;
+    height: 6rem;
+    display: inline-block;
+    margin-right: 5px;
+    
+
+}
+.delete{
+    border-radius: 5px;
+    background-color: rgb(235, 118, 118);
+    margin-left: 7rem;
+    border: 1px solid;
+    
+}
+
+.btn-container
+{
+width: 10rem;
+height: 2rem;
+margin-left:5rem;
+
+}
+.modal-overlay
+{
+   
+    background-color: aqua;
+    border:solid 2px black;
+     border-radius: 5px;
+     width:30rem;
+    height: 5rem;
+    margin-bottom: 10rem;
+    display:grid;
+    place-items: center;
+    
+    visibility:hidden;
+
+    }
+.show-overlay
+{
+ 
+ background: rgb(195, 185, 185);
+ border-radius: var(--radius);
+ width: 70vw;
+ height: 30vh;
+ margin-bottom: 18rem;
+ margin-left: 5rem;
+ max-width: var(--fixed-width);
+ text-align: center;
+ display: grid;
+ place-items: center;
+ position: relative;
+ z-index: -10;
+
+}
+.mod-container{
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(73, 166, 233, 0.5);
+  display: grid;
+  place-items: center;
+  transition: var(--transition);
+  visibility: hidden;
+  z-index: -10;
+  
+}
+.open-modal {
+  visibility: visible;
+  z-index: 10;
+}
