@@ -11,12 +11,15 @@ app.get("/api", (req, res) =>{
 
 
 app.post('/postRequest', (req, res)=>{
-   
-    console.log(req.body)
-  const actividad = new actividad(req.body);
 
-  actividad.save();
-  res.status(201).json("falla")
+
+  res.send(req.body)
+    console.log(req.body, "helloooo")
+  
+  // const actividad = new actividad(req.body);
+      
+  // actividad.save();
+  // res.status(201).json("falla")
    
 })
 

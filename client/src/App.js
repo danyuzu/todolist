@@ -3,6 +3,7 @@ import './App.css';
 import React,{useState, useRef, useEffect} from 'react';
 import Chore from './Chore';
 import Addform from './Addform';
+import axios from 'axios';
 const  App =() =>{
 
 
@@ -20,14 +21,17 @@ const  App =() =>{
    
   ]
   )
+
+
+//   fetch('/postRequest',{
+//     method: 'POST',
+//     headers: {
+//         'Content-Type': 'application/json',
+//     },
+//     body: JSON.stringify(chores.name, chores.id),
+// }).then(r=>console.log(r,'registrada'))
   useEffect(()=>{
-    fetch('/postRequest',{
-      method: 'POST',
-      headers: {
-          'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(chores.name, chores.id),
-  }).then(r=>console.log(r,'registrada'))
+    axios.post('/postRequest', JSON.stringify({chores})).then(res=>console.log(res))
   },[chores])
 
 
@@ -53,9 +57,7 @@ const Addchore=(name) =>
 
 const removechore=(id) =>
 {
-  fetch('/delete' + id, {
-  method: 'DELETE',
-}).then(res=> console.log(res))
+  axios.delete('/delete' + id).then(res=> console.log(res))
 setchores(prev => prev.filter(p=> p.id !== id));
 }
   return (
